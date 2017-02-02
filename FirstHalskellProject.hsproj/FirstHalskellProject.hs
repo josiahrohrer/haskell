@@ -95,7 +95,8 @@ productofList2 a
   | checkList a == False = productofList a
   | checkList a == True = error "empty List
 
-
+newfunction a :: a -> a 
+newfunction a = a + 1 
 
 
 
