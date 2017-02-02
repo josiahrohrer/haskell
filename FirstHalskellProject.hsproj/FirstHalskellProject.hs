@@ -93,52 +93,7 @@ productofList (x : xs) = x * productofList (xs)
 
 productofList2 a 
   | checkList a == False = productofList a
-  | checkList a == True = error "empty List"
-
-
-
-
-
-
-
- 
-  
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  | checkList a == True = error "empty List
 
 
 
