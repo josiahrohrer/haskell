@@ -78,13 +78,13 @@ alltoUpper (chr : restString) =
   toUpper chr : alltoUpper restString
 
 checkIfListhascontent :: [a] -> Bool
-checkIfListhascontent [] = True
-checkIfListhascontent (x:xs) = False
+checkIfListhascontent [] = False
+checkIfListhascontent (x:xs) = True
 
 head2 :: [a] -> a
 head2 a
-  | checkList a == False = head a
-  | checkList a ==True = error "empty List!!!"
+  | checkIfListhascontent a == True = head a
+  | checkIfListhascontent a == False = error "empty List!!!"
   | otherwise = error "unknown Error"
 
 productofList :: Num a => [a] -> a
@@ -92,5 +92,8 @@ productofList [] = 1
 productofList (x : xs) = x * productofList (xs)
 
 productofList2 a
-  | checkList a == False = productofList a
-  | checkList a == True = error "empty List"
+  | checkIfListhascontent a == True = productofList a
+  | checkIfListhascontent a == False = error "empty List"
+
+
+factorial a = productofList [1..a]
